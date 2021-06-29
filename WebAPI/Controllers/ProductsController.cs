@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
             var result = _productService.GetAll();
             if (result.Success)
             {
@@ -52,6 +52,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result.Message);
         }
+        /*[HttpGet("getproductdetails")]
+        public IActionResult GetProductDetails()
+        {
+            var result = _productService.GetProductDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
+        }*/
         [HttpPost("add")]
         public IActionResult Add(Product product)
         {
